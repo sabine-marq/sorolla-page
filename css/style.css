@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+/* ALGEMEEN  en MOBILE--------------------------------------------------------------*/
+div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+/* TYPOGRAFIE uitzonderingen volgen voor breedscherm--------------------------------------------------
+ */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.logo { /* de logo is hier een gewone tekst*/
+    font-size: 1.5rem;
+}
+
+.logo a {
+    font-weight: bold;
+}
+
+/* titels */
+h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.0rem;
+}
+
+h3 {
+    font-size: 0.9rem;
+}
+
+.kant h2, .kant h3 {
+    font-style: italic;
+}
+
+/* hyperlinks */
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.kant a:hover {
+    text-decoration: underline;
+}
+
+.hoofdinhoud a {
+    font-weight: bold;
+}
+
+strong {
+    font-size: 0.9em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+}
+
+/* KLEURENKAART  uitzonderingen volgen voor breedscherm-------------------------------------------- */
+:root {
+    --tekstkleur:       #222222;
+    --grijs1:           #272727;
+    --grijs2:           #373737 ;
+    --grijs3:           #474747;
+    --grijs4:           #575757;
+    --grijs5:           #ECECEC;
+    --blauw:            #5C90DB;
+    --roze:             #FFC0CB;
+    --body-background: #FCE7CA;
+}
+body {
+    background-color: #FFFFFF;
+    color: var(--tekstkleur);
+}
+
+.logo {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.logo a {
+    font-weight: bold;
+    color: #000000;
+}
+
+.hoofdheader {
+    background-color: var(--grijs3);
+    color: #FFFFFF;
+}
+
+.hoofdmenu li, .hoofdmenu a:hover {
+    color: var(--tekstkleur);
+}
+
+.hoofdmenu li:hover {
+    background-color: var(--grijs5);
+}
+
+.hoofdmenu a {
+    display: block;
+    color: #FFFFFF;
+}
+
+/*.hoofdmenu a:hover {*/
+/*    color: var(--tekstkleur);*/
+/*}*/
+
+.kant .datums {
+    background-color: var(--grijs3);
+}
+
+.kant .tag {
+    background-color: var(--grijs2);
+}
+
+.kant .diaporama, #inhoud {
+    background-color: var(--grijs1);
+}
+
+.hoofdinhoud {
+    background-color: #FFFFFF;
+}
+
+.kant a {
+    color: #FFFFFF;
+}
+
+.kant {
+    background-color: var(--grijs1);
+    color: #FFFFFF;
+}
+
+/* STRUCTUUR -----------------MOBILE FIRST----------smalScherm--------------*/
+.hoofdinhoud {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.logo {
+    padding: 0.5rem 1rem;
+}
+
+.nauweBreedte {
+    width: 100%;
+}
+
+/**************** hoofdmenu **************************/
+/* vertikaal menu  container bepaalt breedte van list */
+.hoofdheader {
+    position: relative;
+    overflow: auto;
+}
+
+/* nav */
+.hoofdmenu ul {
+    padding: 0;
+}
+
+.hoofdmenu li {
+    display: block; /* onder elkaar */
+    padding: 0.4286em 1.1428em; /* 6px 16px */
+}
+
+/**************** kant *****************************/
+.kant .diaporama {
+    padding: 2rem 1rem;
+}
+
+/* helper classes  specifiek MOBILE */
+.breedScherm {
+    display: none;
+}
+
+.thumbnail {
+    padding: 0.5rem 0;
+}
+
+/**************** hoofdinhoud **************************/
+.hoofdinhoud {
+    padding-top: 1.2rem;
+}
+
+.beeld {
+    max-width: 100%;
+}
+
+/* breedScherm vanaf 640 ------------------------------------------------------------------------ */
+@media screen and (min-width: 640px) {
+    body {
+        background-color: var(--body-background);
+    }
+
+    /* NIET MOBILE gecentreerde inhoud */
+    .nauweBreedte {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    header, .logo {
+        background-color: var(--grijs3)
+    }
+
+    .hoofdheader {
+        margin-top: 1rem;
+    }
+
+    .logo a {
+        color: #FFFFFF;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .hoofdheader {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        align-items: center;
+    }
+
+    .kopnav {
+        position: static;
+    }
+
+    nav ul {
+        list-style-type: none;
+        float: right;
+    }
+
+    .hoofdmenu li:hover {
+        background-color: transparent;
+    }
+
+    .hoofdmenu a:hover {
+        color: var(--blauw);
+    }
+
+    .hoofdmenu {
+        max-width: none;
+    }
+
+    .hoofdmenu {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hoofdmenu li {
+        display: inline-block;
+        margin: 0 0 0 1.5rem;
+        padding: 0;
+        border: none;
+    }
+
+    /**************** hoofdinhoud **************************/
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .hoofdinhoud {
+        background-color: #FFFFFF;
+        color: var(--tekstkleur);
+    }
+
+    #inhoud {
+        margin-top: 1rem;
+    }
+
+    #inhoud {
+        box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    /**************** kant *****************************/
+    /* helper classes  uitgesloten voor smalScherm */
+    .breedScherm {
+        display: block;
+    }
+
+    .smalScherm {
+        display: none;
+        color: transparent;
+    }
+
+    .kant {
+        float: right;
+        width: 30%;
+    }
+
+    #inhoud .hoofdinhoud {
+        max-width: 70%;
+        box-sizing: border-box;
+        padding: 2% 3.5%;
+    }
+
+    .kant h3 {
+        font-size: 0.9rem;
+        font-weight: normal;
+    }
+
+    /* lijsten */
+    .kant ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .kant ul p {
+        padding-left: 1rem;
+    }
+
+    .kant .datums, .kant .tag, .kant .diaporama {
+        padding: 2rem 2rem;
+    }
+
+    .tag a:hover {
+        text-decoration: none;
+    }
+
+    .tag input[type="checkbox"] {
+        float: right;
+    }
+
+    .diaporama ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .diaporama a {
+        display: block;
+        border: 4px solid var(--body-background);
+        height: 70px;
+        width: 120px;
+        background-size: 100%;
+    }
+
+    .diaporama ul li:nth-child(1) a {
+        background-image: url("../img/sorolla/otra_marguerita.jpg");
+    }
+
+    .diaporama ul li:nth-child(2) a {
+        background-image: url("../img/sorolla/joaquin_sorolla.jpg");
+    }
+
+    .diaporama ul li:nth-child(3) a {
+        background-image: url("../img/sorolla/chicos_en_la_playa.jpg");
+    }
+
+    .diaporama ul li:nth-child(4) a {
+        background-image: url("../img/sorolla/la_bata_rosa.jpg");
+    }
+
+    .diaporama ul li:nth-child(5) a {
+        background-image: url("../img/sorolla/barkas.jpg");
+    }
+
+    .diaporama ul li:nth-child(6) a {
+        background-image: url("../img/sorolla/La_vuelta_de_la_pesca.jpg");
+    }
+
+    .diaporama ul li:nth-child(7) a {
+        background-image: url("../img/sorolla/flores.jpg");
+    }
+
+    .tag li {
+        display: block;
+        background-color: var(--grijs1);
+        border-radius: 10px;
+        padding: .5rem 1rem;
+        margin-top: 1rem;
+    }
+
+    .tag li:hover {
+        display: block;
+        background-color: var(--grijs4);
+        border-radius: 10px;
+        padding: .5rem 1rem;
+        margin-top: 1rem;
+    }
+
+    .tag h3 {
+        display: inline;
+    }
+}
+/* breedScherm tussen 640 en 840------------------------------------------------------------------------ */
+@media screen and (min-width: 640px) and (max-width: 840px) {
+    h3 {
+        font-size: 0.6rem;
+    }
+    .kant .datums, .kant .tag, .kant .diaporama {
+        padding: 2rem 0.5em;
+    }
+    .tag li {
+        padding: .5rem 0.5rem;}
+}
